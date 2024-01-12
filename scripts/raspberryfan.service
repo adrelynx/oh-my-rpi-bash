@@ -1,0 +1,12 @@
+[Unit]
+Description=Raspberry Pwm Fan Control
+After=network-online.target
+Wants=network.target
+
+[Service]
+Restart=on-failure
+RestartSec=10s
+ExecStart=python3 /home/pi/scripts/fan_control.py
+
+[Install]
+WantedBy=multi-user.target
